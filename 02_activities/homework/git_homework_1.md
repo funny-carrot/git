@@ -1,33 +1,80 @@
-# Git Homework 1
+# Homework 1: farmersmarket.db
 
-## Tasks
-### Task 1
-1. Create a new directory named `githomework1`.
-2. Initialize an empty git repository with `git init`.
-3. Using your choice of text editor, create a README.md file.
-4. Using the git command line, add this file to staging, then commit the file to your repository with a suitable commit message.
-    * `git add <filename>` then `git commit`
-5. Write a suitable commit message and finalize your commit
-6. 📸 Take a screenshot of your terminal output
-8. Show the commit history
-    * `git log`
-9. 📸 Take a screenshot of your terminal output
+![homework_1_Yibin Wang](https://github.com/user-attachments/assets/75e1ecfe-dd39-4353-a98a-818bea0c8481)
 
-### Task 2
-1. Create a new public repository on GitHub
-2. Add your GitHub repository as a remote for your local `githomework1` repository
-    * `git remote add origin <url>`
-3. Push your local `githomework1` repository to GitHub
-4. Include your repository URL in your submission
 
-### Task 3
-1. Create a new branch called `playing-with-bash`
-2. Create 5 empty files with the names up to you
-3. Use `echo` into the 5 empty files a few sentences about anything
-4. Stage, commit and push your work on GitHub
-5. Open up a pull request
+- Due on Thursday, September 12 at 11:59pm
+- Weight: 8% of total grade
 
-### Submission
+## Get to know the farmersmarket.db
+Steps to complete this part of the homework:
 
-1. When you are done, please commit your changes, and push it to GitHub.
-2. Open up a pull request and add your Learning Support Person as a reviewer. You may need to add them to your repository.
+#### 1) Load Database
+- Open DB Browser for SQLite
+- Go to File > Open Database
+- Navigate to your farmersmarket.db 
+	- This will be wherever you cloned the GH Repo (within the **SQL** folder)
+	- ![db_browser_for_sqlite_choose_db.png](./images/01_db_browser_for_sqlite_choose_db.png)
+
+#### 2) Configure your windows
+By default, DB Browser for SQLite has three windows, with four tabs in the main window and three tabs in the bottom right window
+- Window 1: Main Window (Centre)
+	- Stay in the Database Structure tab for now
+- Window 2: Edit Database Cell (Top Right)
+- Window 3: Remote (Bottom Right)
+	- Switch this to DB Schema tab (very bottom)
+
+Your screen should look like this (or very similar)
+![db_browser_for_sqlite.png](./images/01_db_browser_for_sqlite.png)
+
+#### 3) The farmersmarket.db
+There are 10 tables in the Main Window:
+1) booth
+2) customer
+3) customer_purchases
+4) market_date_info
+5) product
+6) product_category
+7) vendor
+8) vendor_booth_assignments
+9) vendor_inventory
+10) zip_data
+
+Switch to the Browse Data tab, booth is selected by default
+ ![01_the_browse_data_tab.png](./images/01_the_browse_data_tab.png) 
+
+
+Using the table drop down at the top left, explore some of the contents of the database
+![01_the_table_drop_down_at_the_top_left.png](./images/01_the_table_drop_down_at_the_top_left.png)
+
+Move on to the Logical Data Model task when you have looked through the tables
+
+
+## Logical Data Model
+
+Recall during the module:
+
+I diagramed the following four tables:
+- product
+- product_category
+- vendor
+- vendor_inventory
+
+![01_farmers_market_logical_model_partial.png](./images/01_farmers_market_logical_model_partial.png)
+
+
+Your task: choose two tables and create a logical data model. There are lots of tools you can do this (including drawing this by hand), but I'd recommend [Draw.io](https://www.drawio.com/) or [LucidChart](https://www.lucidchart.com/pages/). 
+
+A logical data model must contain:
+- table name
+- column names
+- relationship type
+
+Please do not pick the exact same tables that I have already diagramed. For example, you shouldn't diagram the relationship between `product` and `product_category`, but you could diagram `product` and `customer_purchases`.
+
+**A few hints**:
+- You will need to use the Browse Data tab in the main window to figure out the relationship types.
+- You can't diagram tables that don't share a common column
+	- These are the tables that are connected
+	-  ![01_farmers_market_conceptual_model.png](./images/01_farmers_market_conceptual_model.png)
+- The column names can be found in a few spots (DB Schema window in the bottom right, the Database Structure tab in the main window by expanding each table entry, at the top of the Browse Data tab in the main window)
